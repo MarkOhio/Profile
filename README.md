@@ -27,7 +27,6 @@ The footer section provides additional information and copyright details.
 Technologies Used
 - HTML
 - CSS
-- JavaScript
 
 Acknowledgments
 I would like to thank Sofia for her guidance and mentorship throughout this project.

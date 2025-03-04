@@ -5,71 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark Ohio</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .avatar{
-            width: 50vh;
-            padding-top: 20px;
-            
-        }
-        .ppic{
-            background-color: rgb(12, 0, 80);
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            max-height: 40vh;
-            
-        }
-        .active{
-            background-color: rgb(12, 0, 80);
-            color: white;
-            width: 40vh;
-            height: max-content;
-            text-align: center;
-           border-radius: 10%;
-           margin: auto;
-           padding: 10px;
-        }
-        ul{
-            padding: 2vh;
-            list-style-type: none;
-            font-size: 20px;
-        }
-
-        @media (max-width: 740px) {
-            .avatar{
-            width: 90vw;
-            
-        }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!--header start -->
+    <div class="name">  <h1 id="name">Meet Mark Ohio</h1>  <button id="mode-toggle">&#9789</button> </div>
+<!--header end -->
+    
+<hr>
+
+<!--profile start -->
     <div class="profile">
         <div class="ppic">
-            <center>
-                <img src="avatar.png" alt="avatar" class="avatar">
-            </center>
-            
+                <img src="pic/avatar.png" alt="avatar" class="avatar">                
         </div>
-        <br> <br> <br> <br> <br>
-        <center>
-            <h2>Mark Ohio</h2>
-        </center>
-        <br> 
-        <div class="active">
+
+        <div class="protxt">
+            <ul>
+                <li><b id="hide">Nationality:</b> Nigerian</li>
+                <li><b id="hide">Height:</b> 6ft 6"</li>
+                <li><b id="hide">Age:</b><i>Old Enough</i> </li>
+                <li><b id="hide">Drive:</b> Passion<b id="hide">ate</b></li>
+            </ul> 
+        </div>
+    </div>  
+<!--profile end -->
+      
+   
+          
+<!--favourite activities start -->
+<br> 
+        <div class="active2">
             <h2>Favourite Activities:</h2>
             <ul>
-                <li>Coding</li>
-                <li>Watching Anime</li>
-                <li>listening to music</li>
-                <li>learning</li>
-                <li>Working out</li>
-                <li>Sleeping</li>
-            </ul>
+                <li><button class="collapsible">Coding <br><h3>+</h3>
+                </button>
+                    <div class="content">
+                      <p>I'm passionate about coding websites from scratch, bringing designs to life, and solving complex problems. It's a thrill to see my ideas take shape and function seamlessly.</p>
+                    </div></li>
+
+
+                <li><button class="collapsible">Watching Anime <br><h3>+</h3></button>
+                    <div class="content">
+                      <p>Anime is a captivating Japanese art style that combines stunning visuals, engaging storylines, and memorable characters. I appreciate its rich history, cultural significance, and the ability to transport me to new worlds.</p>
+                    </div></li>
+
+
+                <li><button class="collapsible">listening to music <br><h3>+</h3></button>
+                    <div class="content">
+                      <p>Music has a profound impact on my mood and well-being. I enjoy immersing myself in the rhythms, melodies, and harmonies that evoke emotions, spark creativity, and provide relaxation.</p>
+                    </div> </li>
+
+                    <li><button class="collapsible">learning <br><h3>+</h3></button>
+                        <div class="content">
+                          <p>I have a curiosity-driven approach to life, and I'm always eager to acquire new knowledge and skills. Applying what I've learned to everyday situations is incredibly fulfilling, as it broadens my perspectives and enhances my personal growth.</p>
+                        </div></li>
+
+                    <li><button class="collapsible">Working out <br><h3>+</h3></button>
+                        <div class="content">
+                          <p>Regular exercise not only improves my physical health but also boosts my mental well-being. The sense of accomplishment and renewed energy after a good workout is exhilarating, and it motivates me to push beyond my limits.</p>
+                        </div></li>
+
+                <li><button class="collapsible">Sleeping <br><h3>+</h3></button>
+                    <div class="content">
+                      <p>Sleep is essential for recharging and rejuvenating my mind and body. It's a chance to unwind, let go of worries, and awaken refreshed, revitalized, and ready to tackle new challenges.</p>
+                    </div></li>
+            </ul> 
+
+
+            <h2 id="htwo">.</h2>
         </div>
+
+      
+
+<!--favourite activities end -->
+<br><br>
+<!-- socials start -->
+    <div class="socialBtn">
+        <a href=""><img src="pic/x.png" alt="X" id="socialBtn"></a>
+
+        <a href=""><img src="pic/in.png" alt="X" id="socialBtn"></a>
+
+        <a href=""><img src="pic/ig.png" alt="X" id="socialBtn"></a>
+
+        <a href=""><img src="pic/wa.png" alt="X" id="socialBtn"></a>
     </div>
+       
+<!-- socials end -->
+     
+
+<!--footer start -->
+<footer>
+    <p>@copyright, 2025. </p> <p>developed by</p> <p>Mark Ohio</p> 
+</footer>
+<!--footer end -->
 </body>
+<script>
+    const toggleButton = document.getElementById('mode-toggle');
+    toggleButton.addEventListener('click',() =>
+    {
+        document.body.classList.toggle('dark-mode');
+        toggleButton.classList.toggle('light-mode');
+        toggleButton.textContent = toggleButton.classList.contains('light-mode') ? '\u2600' : '\u263d';
+    });
+</script>
+<script>
+    var coll =
+    document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
 </html>

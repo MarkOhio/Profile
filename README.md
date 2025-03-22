@@ -4,7 +4,7 @@ Introduction
 This portfolio website is my second assignment for the mentorship program with Sofia. The task was to utilize CSS to style an existing HTML page.
 
 Website Overview
-This website showcases my skills in HTML, CSS, and a little JavaScript. The website is divided into several sections:
+This website showcases my skills in HTML, CSS, and JavaScript. The website is divided into several sections:
 
 Header Section
 The introduction is displayed using the H1 tag, which reads "Meet Mark Ohio."
@@ -27,6 +27,7 @@ The footer section provides additional information and copyright details.
 Technologies Used
 - HTML
 - CSS
+- JavaScript 
 
 Acknowledgments
 I would like to thank Sofia for her guidance and mentorship throughout this project.

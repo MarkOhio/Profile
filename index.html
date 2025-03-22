@@ -7,8 +7,13 @@
     <title>Mark Ohio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    .background{
+        overflow: hidden;
+    }
+</style>
 <body>
-
+    <div class="background"></div>
 <!--header start -->
     <div class="name">  <h1 id="name">Meet Mark Ohio</h1>  <button id="mode-toggle">&#9789</button> </div>
 <!--header end -->
@@ -17,8 +22,9 @@
 
 <!--profile start -->
     <div class="profile">
+        <div class="background"></div>
         <div class="ppic">
-                <img src="pic/avatar.png" alt="avatar" class="avatar">                
+                <img src="pic/avatar2.png" alt="avatar" class="avatar">                
         </div>
 
         <div class="protxt">
@@ -83,13 +89,13 @@
 <br><br>
 <!-- socials start -->
     <div class="socialBtn">
-        <a href="https://x.com/Sad_de_ness"><img src="pic/x.png" alt="X" id="socialBtn"></a>
+        <a href=""><img src="pic/x.png" alt="X" id="socialBtn"></a>
 
-        <a href="https://www.linkedin.com/in/mark-obosojie-ohio-0786a9332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="pic/in.png" alt="X" id="socialBtn"></a>
+        <a href=""><img src="pic/in.png" alt="X" id="socialBtn"></a>
 
-        <a href="https://www.instagram.com/de_mark_69?igsh=MWQwN3ZiYWNlNGI0Zw=="><img src="pic/ig.png" alt="X" id="socialBtn"></a>
+        <a href=""><img src="pic/ig.png" alt="X" id="socialBtn"></a>
 
-        <a href="https://wa.me/+2348087517272?text=Hi"><img src="pic/wa.png" alt="X" id="socialBtn"></a>
+        <a href=""><img src="pic/wa.png" alt="X" id="socialBtn"></a>
     </div>
        
 <!-- socials end -->
@@ -127,4 +133,62 @@
         });
     }
 </script>
+
+<script>
+    
+ // Select the background container
+const background = document.querySelector('.background');
+
+// Function to generate a random number within a range
+const random = (min, max) => Math.random() * (max - min) + min;
+
+// Function to create a single "X" or "O"
+const createXO = () => {
+  const xo = document.createElement('div');
+  xo.classList.add('xo');
+  xo.textContent = Math.random() > 0.5 ? 'X' : 'O'; // Randomly choose "X" or "O"
+
+  // Random position
+  xo.style.left = `${random(0, 100)}vw`;
+  xo.style.top = `${random(0, 100)}vh`;
+
+  // Random animation direction
+  xo.style.setProperty('--random-x', random(-1, 1));
+  xo.style.setProperty('--random-y', random(-1, 1));
+
+  // Random size
+  xo.style.fontSize = `${random(10, 50)}px`;
+
+  background.appendChild(xo);
+
+  // Remove the element after animation ends
+  setTimeout(() => {
+    xo.remove();
+  }, 5000); // Matches the animation duration
+};
+
+// Generate multiple "X" and "O" elements
+const generateXOs = () => {
+  for (let i = 0; i < 100; i++) {
+    createXO();
+  }
+};
+
+// Continuously generate new "X" and "O" elements
+setInterval(() => {
+  createXO();
+}, 100);
+
+// Initial batch of "X" and "O" elements
+generateXOs();
+
+</script>
+
+<script>window.addEventListener('load', () => {
+    // Select the container with the content
+    const container = document.querySelector('.profile');
+   
+    // Add the 'slide-up' class to trigger the animation
+    container.classList.add('slide-up');
+  });</script>
 </html>
